@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Méta-informations de la page -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Chargement des bibliothèques nécessaires -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Icône de la page -->
+  <link rel="shortcut icon" href="auth.png">
+
+  <!-- Titre de la page -->
+  <title>Exercice 2</title>
+</head>
+<body>
+
+  <!-- Section principale -->
+  <section class="min-h-screen flex flex-col">
+
+    <!-- Menu -->
+    <div id="menu" class="block mx-auto w-[80%] mt-2 mb-2 bg-gray-300 p-5 rounded-lg">
+      <h1 class="text-bold underline text-gray-800 text-center mb-5">Basé du jeu OSU</h1>
+
+      <!-- Row -->
+      <div class="flex">
+        <!-- Colonne 1 -->
+        <div class="flex-1 flex justify-center">
+          <button onclick="startGame()" class="px-6 py-3 bg-green-400 rounded-lg hover:bg-green-500 transition duration-300 ease-in-out">Commencer la partie</button>
+        </div>
+
+        <!-- Colonne 2 -->
+        <div class="flex-1">
+          <span class="block text-center">Difficulté<span>
+          <input id="inputDiff" onChange="diffmodif(this)" class="cursor-pointer" min="1" max="10" type="range" value="5">
+        </div>
+
+        <!-- Colonne 3 -->
+        <div class="flex-1 flex justify-center">
+          <button onclick="endGame()" class="px-6 py-3 bg-red-400 rounded-lg hover:bg-red-500 transition duration-300 ease-in-out">Annuler la partie</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Conteneur du canvas -->
+    <div id="canvasContainer" class="flex-1 overflow-hidden bg-gray-500">
+      <canvas id="monCanvas"></canvas>
+    </div>
+
+  </section>
+
+  <!-- Script -->
+  <script src="index.js"></script>
+
+</body> 
+</html>

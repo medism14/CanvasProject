@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+  <!-- Définition de l'encodage et de la vue initiale -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Inclusion de jQuery et Tailwind CSS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Définition de l'icône de raccourci -->
+  <link rel="shortcut icon" href="auth.png">
+  
+  <!-- Titre de la page -->
+  <title>Exercice 1</title>
+</head>
+<body>
+
+  <!-- Styles en ligne spécifiques -->
+  <style>
+    tr button {
+      font-size: 40px;
+      padding: 0px 20px;
+    }
+  </style>
+
+  <!-- Section gauche pour le canvas -->
+  <section class="float-left min-h-screen w-1/2">
+    <canvas id="MyCanvas"></canvas>
+  </section>
+
+  <!-- Section droite pour les outils de manipulation -->
+  <section class="w-1/2 float-right">
+    <div class="w-[90%] block mx-auto bg-gray-300 p-5 mt-2 rounded-lg">
+      <!-- Contrôle de la vitesse -->
+      <div class="w-[80%] text-center m-auto">
+        <span class="block">Vitesse</span>
+        <span class="block"><input oninput="changementVitesse(this.value)" id="speedRange" type="range" min="0" max="100" step="1" class="cursor-pointer"></span>
+      </div>
+      <!-- Contrôle de la taille -->
+      <div class="w-[80%] text-center m-auto">
+        <span class="block">Taille</span>
+        <span class="block">
+          <input oninput="changementTaille(this.value)" id="sizeRange" type="range" min="5" max="30" step="1" class="cursor-pointer">
+        </span>
+      </div>
+      <!-- Boutons d'action -->
+      <div class="block mt-1">
+        <span class="block text-left">Lancement</span>
+        <button onclick="run()" type="submit" id="run" class="w-full mx-auto px-3 py-1 border border-gray-400 rounded-md text-center bg-gray-50 hover:bg-gray-100 transition duration-100">Run</button>
+      </div>
+      <div class="block mt-1">
+        <span class="block text-left">Arreter</span>
+        <button onclick="stop()" type="submit" id="stop" class="w-full mx-auto px-3 py-1 border border-gray-400 rounded-md text-center bg-gray-50 hover:bg-gray-100 transition duration-100">Stop</button>
+      </div>
+      <div class="block mt-1">
+        <span class="block text-left">Pas à Pas</span>
+        <button onclick="pap()" type="submit" id="pap" class="w-full mx-auto px-3 py-1 border border-gray-400 rounded-md text-center bg-gray-50 hover:bg-gray-100 transition duration-100">Step by Step</button>
+      </div>
+      <div class="block mt-1">
+        <span class="block text-left">RAZ</span>
+        <button onclick="raz()" type="submit" id="raz" class="w-full mx-auto px-3 py-1 border border-gray-400 rounded-md text-center bg-gray-50 hover:bg-gray-100 transition duration-100">raz</button>
+      </div>
+    </div>
+
+    <!-- Joystick pour les roses de vent -->
+    <div class="w-[90%] mx-auto mt-7 flex justify-center">
+      <canvas id="joystick-canvas" class="block"></canvas>
+    </div>
+  </section>
+
+  <!-- Inclusion des scripts pour le joystick et le canvas -->
+  <script src="scriptJoystick.js"></script>
+  <script src="scriptCanvas.js"></script>
+
+</body> 
+</html>

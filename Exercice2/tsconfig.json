@@ -1,0 +1,10 @@
+{
+	"compilerOptions": {
+		"target": "es2019",
+		"module": "commonjs",
+		"strict": true,
+		"outDir": "dist",
+		"skipLibCheck": true,
+	},
+	"include": ["src/**/*.ts", "src/**/*.mp3"]
+}
